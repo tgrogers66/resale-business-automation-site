@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resale Business Automation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 780px; margin: 0 auto; padding: 60px 30px; }
+    header { margin-bottom: 40px; border-bottom: 3px solid #e53238; padding-bottom: 20px; }
+    h1 { font-size: 36px; font-weight: 700; color: #1a1a1a; }
+    .tagline { color: #666; font-size: 17px; margin-top: 6px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 34px 0 14px 0; color: #1a1a1a; }
+    p { margin-bottom: 14px; font-size: 16px; color: #333; }
+    ul { margin: 10px 0 20px 20px; }
+    li { margin-bottom: 8px; color: #333; }
+    .feature-block { background: #f5f5f5; padding: 20px 24px; border-radius: 8px; margin-bottom: 14px; }
+    .feature-block h3 { font-size: 17px; margin-bottom: 6px; color: #1a1a1a; }
+    .feature-block p { font-size: 15px; color: #555; margin-bottom: 0; }
+    .meta { color: #888; font-size: 14px; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: "SF Mono", Consolas, monospace; font-size: 14px; }
+    footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 14px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section-divider { height: 1px; background: #eee; margin: 40px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Resale Business Automation</h1>
+      <p class="tagline">AI-assisted eBay listing tool for clothing resellers.</p>
+    </header>
+
+    <h2>Overview</h2>
+    <p>
+      Resale Business Automation is a personal reseller tool that accelerates
+      creating high-quality eBay listings from photos. It reads photos of a
+      clothing item, extracts the brand, size, color, material, condition,
+      and item-specific details using AI vision, and creates a draft listing
+      on the seller's eBay account via the eBay Inventory API.
+    </p>
+
+    <h2>How it works</h2>
+    <div class="feature-block">
+      <h3>1. Drop photos</h3>
+      <p>
+        The seller drops a batch of photos taken on their phone. The tool
+        auto-groups photos into individual items using EXIF timestamps,
+        so a day's worth of inventory can be prepared in one go.
+      </p>
+    </div>
+    <div class="feature-block">
+      <h3>2. AI analysis</h3>
+      <p>
+        Claude AI analyzes each item's photos in a two-stage pipeline —
+        a fast broad-coverage pass, then a high-accuracy verification of
+        the silhouette, title, and key attributes. The tool also
+        identifies which photo is the full garment view (the photo
+        buyers see first) vs. which shows the size/brand tag.
+      </p>
+    </div>
+    <div class="feature-block">
+      <h3>3. Review &amp; edit</h3>
+      <p>
+        Each item is shown as a card with the AI's proposed title,
+        price, condition, and item-specific fields. The seller can edit
+        any field, fix mistakes, or remove items before anything is
+        sent to eBay.
+      </p>
+    </div>
+    <div class="feature-block">
+      <h3>4. Create listings</h3>
+      <p>
+        The tool uploads photos to eBay Picture Services, creates
+        inventory items and unpublished offers via the Inventory API,
+        and — on the seller's click — publishes each offer as a live
+        eBay listing.
+      </p>
+    </div>
+
+    <h2>APIs used</h2>
+    <ul>
+      <li><strong>Sell Inventory API</strong> — inventory item creation, offer creation, and publishing.</li>
+      <li><strong>Sell Account API</strong> — read the seller's business policies (shipping, payment, return).</li>
+      <li><strong>Trading API (UploadSiteHostedPictures)</strong> — upload photos to eBay Picture Services (EPS).</li>
+      <li><strong>Commerce Taxonomy API</strong> — auto-suggest eBay category IDs based on item details.</li>
+      <li><strong>Buy Marketplace Insights API</strong> — comparable sold-price research to inform pricing decisions.</li>
+    </ul>
+
+    <h2>Expected volume</h2>
+    <p>
+      Approximately 90 listings per day during active listing sessions,
+      equating to roughly 500–700 API calls per day (including image uploads,
+      inventory PUT, offer creation, policy lookups, and publishing).
+    </p>
+
+    <div class="section-divider"></div>
+
+    <h2>Privacy</h2>
+    <p>
+      This tool is used by a single eBay seller to manage their own seller
+      account. No third-party user data is collected or stored. The
+      seller's OAuth refresh/access tokens are stored locally on the
+      seller's computer and cleared immediately on disconnect. Item photos
+      are uploaded to eBay Picture Services (eBay's own hosting
+      infrastructure). No data is shared with any third party.
+    </p>
+    <p>
+      An exemption from eBay's Marketplace Account Deletion notification
+      program is in place, reflecting the no-third-party-user-data nature
+      of the tool.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions, contact the developer at
+      <a href="mailto:thomas.rogers66@yahoo.com">thomas.rogers66@yahoo.com</a>.
+    </p>
+
+    <footer>
+      <p class="meta">© 2026 Thomas Rogers. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
